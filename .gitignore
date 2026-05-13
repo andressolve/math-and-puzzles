@@ -1,0 +1,12 @@
+# Local-only playbook with personal notes
+SKILL.md
+
+# Render artifacts from PDF visual checks
+_render_*/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Angles and Turning</title>
+<style>
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    max-width: 720px;
+    margin: 2em auto;
+    padding: 0 1em 4em;
+    color: #232323;
+    line-height: 1.6;
+    background: #fdfcf8;
+  }
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0.1em;
+    text-align: center;
+  }
+  .subtitle {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    margin-top: 0;
+  }
+  h2 {
+    font-size: 1.35em;
+    margin-top: 2.6em;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid #ddd6c4;
+  }
+  p { margin: 0.85em 0; }
+  .widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.3em 0;
+    padding: 1em 1em 0.8em;
+    background: #faf6ec;
+    border: 1px solid #e6dec5;
+    border-radius: 8px;
+  }
+  .widget svg {
+    touch-action: none;
+    user-select: none;
+    cursor: default;
+  }
+  .widget .readout {
+    margin-top: 0.7em;
+    font-family: 'Courier New', monospace;
+    font-size: 1.05em;
+    color: #5a5040;
+    letter-spacing: 0.02em;
+  }
+  .handle {
+    cursor: grab;
+  }
+  .handle:active {
+    cursor: grabbing;
+  }
+  .exercise {
+    background: #f4ede0;
+    border-left: 3px solid #b8a76a;
+    padding: 0.7em 1em;
+    margin: 0.9em 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .exercise p { margin: 0.4em 0; }
+  .exercise input {
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.18em 0.5em;
+    width: 3.5em;
+    border: 1px solid #b8a76a;
+    border-radius: 3px;
+    text-align: center;
+    background: #fffdf6;
+  }
+  .exercise input:focus {
+    outline: none;
+    border-color: #7a6a3a;
+  }
+  .feedback {
+    margin-left: 0.7em;
+    font-style: italic;
+    font-size: 0.95em;
+  }
+  .feedback.ok { color: #2c7a3c; }
+  .feedback.no { color: #a04a3a; }
+  .hint {
+    font-size: 0.92em;
+    color: #888;
+    font-style: italic;
+    margin-top: 0.3em;
+  }
+  blockquote {
+    border-left: 3px solid #999;
+    padding-left: 1em;
+    margin: 1.2em 0;
+    color: #555;
+    font-style: italic;
+  }
+  details {
+    margin: 1em 0;
+    padding: 0.5em 0.8em;
+    background: #f4ede0;
+    border: 1px solid #d5c79c;
+    border-radius: 4px;
+  }
+  details summary {
+    cursor: pointer;
+    color: #5a4a8a;
+    font-weight: bold;
+    font-family: Georgia, serif;
+  }
+  details[open] summary {
+    margin-bottom: 0.4em;
+  }
+  strong { color: #3a3328; }
+</style>
+</head>
+<body>
+
+<h1>Angles and Turning</h1>
+<p class="subtitle">Drag things. Notice what changes.</p>
+
+<!-- ============ STAGE 1: shape only ============ -->
+<h2>Two arms, joined at a point.</h2>
+<p>Drag the gold dot.</p>
+<div class="widget">
+  <svg id="svg1" width="320" height="290" viewBox="-160 -145 320 290">
+    <line x1="0" y1="0" x2="120" y2="0" stroke="#444" stroke-width="2.5" />
+    <line id="armA" x1="0" y1="0" x2="60" y2="-103.92" stroke="#444" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="4" fill="#444" />
+    <circle class="handle" id="handleA" cx="60" cy="-103.92" r="10"
+            fill="#c2a85a" stroke="#5a4a30" stroke-width="1.5" />
+  </svg>
+</div>
+<p>The opening between the two arms is called an <strong>angle</strong>. A small opening, a wide opening, a wraps-most-of-the-way-around opening &mdash; all angles.</p>
+
+<!-- ============ STAGE 2: now with a number ============ -->
+<h2>Putting a number on the opening.</h2>
+<p>One way to measure an angle: imagine the moving arm starts on top of the fixed arm and then turns. A whole way around &mdash; one full turn back to where it started &mdash; we call <strong>360°</strong>. (The little circle just means &ldquo;this number is an angle.&rdquo;)</p>
+<p>Drag the dot. Watch the number.</p>
+<div class="widget">
+  <svg id="svg2" width="320" height="280" viewBox="-160 -140 320 280">
+    <line x1="0" y1="0" x2="0" y2="-128" stroke="#d5cdb2" stroke-width="0.8" stroke-dasharray="3,4"/>
+    <line x1="0" y1="0" x2="-128" y2="0" stroke="#d5cdb2" stroke-width="0.8" stroke-dasharray="3,4"/>
+    <line x1="0" y1="0" x2="0" y2="128" stroke="#d5cdb2" stroke-width="0.8" stroke-dasharray="3,4"/>
+    <path id="arc2" d="" fill="rgba(194,168,90,0.22)" stroke="none"/>
+    <line x1="0" y1="0" x2="120" y2="0" stroke="#444" stroke-width="2.5"/>
+    <line id="armB" x1="0" y1="0" x2="60" y2="-103.92" stroke="#444" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#444"/>
+    <circle class="handle" id="handleB" cx="60" cy="-103.92" r="10"
+            fill="#c2a85a" stroke="#5a4a30" stroke-width="1.5"/>
+  </svg>
+  <div class="readout" id="readoutB">opening: 60°</div>
+</div>
+
+<div class="exercise">
+  <p>Drag the arm to make a <strong>quarter of a full turn</strong>. What number do you see?
+     <input type="text" data-answer="90" /> <span class="feedback"></span></p>
+</div>
+<div class="exercise">
+  <p>Before dragging: predict <strong>half of a quarter turn</strong>.
+     <input type="text" data-answer="45" /> <span class="feedback"></span></p>
+  <p class="hint">Then drag to check.</p>
+</div>
+<div class="exercise">
+  <p>Predict <strong>three quarters</strong> of a full turn.
+     <input type="text" data-answer="270" /> <span class="feedback"></span></p>
+</div>
+<div class="exercise">
+  <p>Two square corners stacked together (an &ldquo;L&rdquo; plus another &ldquo;L&rdquo;) make what angle?
+     <input type="text" data-answer="180" /> <span class="feedback"></span></p>
+  <p class="hint">A square corner is a quarter turn.</p>
+</div>
+
+<!-- ============ STAGE 3: clock ============ -->
+<h2>A clock face.</h2>
+<p>Two hands joined at the middle of a clock. The <strong>short</strong> hand is the hour hand; the <strong>long</strong> hand is the minute hand. Drag either one.</p>
+<div class="widget">
+  <svg id="svg3" width="340" height="340" viewBox="-170 -170 340 340">
+    <circle cx="0" cy="0" r="140" fill="#fffdf6" stroke="#333" stroke-width="2"/>
+    <g id="ticks"></g>
+    <g id="numerals"></g>
+    <path id="arcClock" d="" fill="rgba(194,168,90,0.28)" stroke="none"/>
+    <line id="hourHand" x1="0" y1="0" x2="0" y2="-70" stroke="#333"
+          stroke-width="5" stroke-linecap="round"/>
+    <line id="minHand" x1="0" y1="0" x2="0" y2="-115" stroke="#333"
+          stroke-width="3" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="5" fill="#333"/>
+    <circle class="handle" id="hourHandle" cx="0" cy="-70" r="10"
+            fill="#c2a85a" stroke="#5a4a30" stroke-width="1.5"/>
+    <circle class="handle" id="minHandle" cx="0" cy="-115" r="10"
+            fill="#7da3c4" stroke="#3a5a78" stroke-width="1.5"/>
+  </svg>
+</div>
+
+<div class="exercise">
+  <p>How many hour-marks go around the clock face?
+     <input type="text" data-answer="12" /> <span class="feedback"></span></p>
+</div>
+<div class="exercise">
+  <p>A whole way around is 360°, and the hour-marks split that turn into equal pieces. How many degrees from one hour-mark to the very next one?
+     <input type="text" data-answer="30" /> <span class="feedback"></span></p>
+</div>
+<div class="exercise">
+  <p>Set the long hand on 12 and the short hand on 3. <strong>What is the angle between them?</strong>
+     <input type="text" data-answer="90" /> <span class="feedback"></span></p>
+  <p class="hint">The clock won&rsquo;t tell you this one &mdash; you have to figure it out from where the hands are.</p>
+</div>
+<div class="exercise">
+  <p>Set the long hand on 12 and the short hand on 6. What is the angle?
+     <input type="text" data-answer="180" /> <span class="feedback"></span></p>
+</div>
+<div class="exercise">
+  <p>Now: short hand on <strong>4</strong>, long hand on <strong>12</strong>. What is the angle?
+     <input type="text" data-answer="120" /> <span class="feedback"></span></p>
+</div>
+
+<!-- ============ STAGE 4: revisit ============ -->
+<h2>Back to Saturday Test No. 4.</h2>
+<p>This was the question:</p>
+<blockquote>
+  At exactly 4 o&rsquo;clock, what is the angle between the hour hand and the minute hand?
+</blockquote>
+<div class="exercise">
+  <p>What is the angle?
+     <input type="text" data-answer="120" /> <span class="feedback"></span></p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // ---------------- Simple draggable arm ----------------
+  function setupArm(svgId, handleId, armId, readoutId, arcId) {
+    const svg = document.getElementById(svgId);
+    const handle = document.getElementById(handleId);
+    const arm = document.getElementById(armId);
+    const readout = readoutId ? document.getElementById(readoutId) : null;
+    const arc = arcId ? document.getElementById(arcId) : null;
+    const R = 120;
+    const arcR = 38;
+    let dragging = false;
+    let currentDeg = 60;
+
+    function render() {
+      const rad = currentDeg * Math.PI / 180;
+      // SVG y is down; math-CCW means y = -sin(rad)
+      const tx = R * Math.cos(rad);
+      const ty = -R * Math.sin(rad);
+      arm.setAttribute('x2', tx.toFixed(2));
+      arm.setAttribute('y2', ty.toFixed(2));
+      handle.setAttribute('cx', tx.toFixed(2));
+      handle.setAttribute('cy', ty.toFixed(2));
+      if (readout) {
+        readout.textContent = 'opening: ' + Math.round(currentDeg) + '\u00B0';
+      }
+      if (arc) {
+        const ex = arcR * Math.cos(rad);
+        const ey = -arcR * Math.sin(rad);
+        const large = currentDeg > 180 ? 1 : 0;
+        // sweep-flag 0 in SVG user-space = CCW in user-space.
+        // Since user-space has y down, "CCW in user-space" looks like CW visually.
+        // We want the arc to sweep the same way the arm rotated (math-CCW = visual-CW).
+        // So sweep-flag = 0 traces from (arcR,0) along visual-CW to (ex,ey). Correct.
+        arc.setAttribute('d',
+          'M 0 0 L ' + arcR + ' 0 ' +
+          'A ' + arcR + ' ' + arcR + ' 0 ' + large + ' 0 ' +
+          ex.toFixed(2) + ' ' + ey.toFixed(2) + ' Z');
+      }
+    }
+
+    function svgPoint(clientX, clientY) {
+      const pt = svg.createSVGPoint();
+      pt.x = clientX;
+      pt.y = clientY;
+      return pt.matrixTransform(svg.getScreenCTM().inverse());
+    }
+
+    function setFromPoint(x, y) {
+      let a = Math.atan2(-y, x) * 180 / Math.PI;
+      if (a < 0) a += 360;
+      currentDeg = a;
+      render();
+    }
+
+    function clientFromEvt(e) {
+      if (e.touches && e.touches.length) {
+        return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }
+      return { x: e.clientX, y: e.clientY };
+    }
+
+    function onDown(e) {
+      dragging = true;
+      e.preventDefault();
+    }
+    function onMove(e) {
+      if (!dragging) return;
+      e.preventDefault();
+      const c = clientFromEvt(e);
+      const p = svgPoint(c.x, c.y);
+      setFromPoint(p.x, p.y);
+    }
+    function onUp() { dragging = false; }
+
+    handle.addEventListener('mousedown', onDown);
+    handle.addEventListener('touchstart', onDown, { passive: false });
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('mouseup', onUp);
+    window.addEventListener('touchend', onUp);
+
+    render();
+  }
+
+  setupArm('svg1', 'handleA', 'armA', null, null);
+  setupArm('svg2', 'handleB', 'armB', 'readoutB', 'arc2');
+
+  // ---------------- Clock ----------------
+  (function setupClock() {
+    const svg = document.getElementById('svg3');
+    const ticksG = document.getElementById('ticks');
+    const numeralsG = document.getElementById('numerals');
+    const arc = document.getElementById('arcClock');
+    const hourHand = document.getElementById('hourHand');
+    const minHand = document.getElementById('minHand');
+    const hourHandle = document.getElementById('hourHandle');
+    const minHandle = document.getElementById('minHandle');
+
+    const R = 140;
+    const hourLen = 70;
+    const minLen = 115;
+    const arcR = 50;
+    let hourPos = 0;  // hour mark 0..11
+    let minPos = 0;
+
+    // Build tick marks + numerals
+    for (let i = 0; i < 12; i++) {
+      const angRad = (i * 30 - 90) * Math.PI / 180;
+      const inner = R - 8;
+      const x1 = inner * Math.cos(angRad);
+      const y1 = inner * Math.sin(angRad);
+      const x2 = R * Math.cos(angRad);
+      const y2 = R * Math.sin(angRad);
+      const tk = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      tk.setAttribute('x1', x1.toFixed(2));
+      tk.setAttribute('y1', y1.toFixed(2));
+      tk.setAttribute('x2', x2.toFixed(2));
+      tk.setAttribute('y2', y2.toFixed(2));
+      tk.setAttribute('stroke', '#333');
+      tk.setAttribute('stroke-width', '2');
+      ticksG.appendChild(tk);
+
+      const label = i === 0 ? 12 : i;
+      const lx = (R - 22) * Math.cos(angRad);
+      const ly = (R - 22) * Math.sin(angRad);
+      const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      txt.setAttribute('x', lx.toFixed(2));
+      txt.setAttribute('y', (ly + 5).toFixed(2));
+      txt.setAttribute('text-anchor', 'middle');
+      txt.setAttribute('font-family', 'Georgia, serif');
+      txt.setAttribute('font-size', '15');
+      txt.setAttribute('fill', '#333');
+      txt.textContent = label;
+      numeralsG.appendChild(txt);
+    }
+
+    function setHand(handle, hand, length, pos) {
+      const angRad = (pos * 30 - 90) * Math.PI / 180;
+      const tx = length * Math.cos(angRad);
+      const ty = length * Math.sin(angRad);
+      hand.setAttribute('x2', tx.toFixed(2));
+      hand.setAttribute('y2', ty.toFixed(2));
+      handle.setAttribute('cx', tx.toFixed(2));
+      handle.setAttribute('cy', ty.toFixed(2));
+    }
+
+    function updateArc() {
+      // Always sweep clockwise from the minute hand to the hour hand.
+      // Difference in hour-marks, brought into [0, 12).
+      let raw = ((hourPos - minPos) % 12 + 12) % 12;
+
+      if (raw === 0) {
+        arc.setAttribute('d', '');
+        return;
+      }
+
+      const mAng = (minPos * 30 - 90) * Math.PI / 180;
+      const endAng = mAng + (raw * 30) * Math.PI / 180;
+      const sx = arcR * Math.cos(mAng);
+      const sy = arcR * Math.sin(mAng);
+      const ex = arcR * Math.cos(endAng);
+      const ey = arcR * Math.sin(endAng);
+      // large-arc-flag = 1 when the sweep is more than 180° (raw > 6 marks).
+      // sweep-flag = 1 → clockwise in SVG user-space (which has y down).
+      const large = raw > 6 ? 1 : 0;
+      arc.setAttribute('d',
+        'M 0 0 L ' + sx.toFixed(2) + ' ' + sy.toFixed(2) + ' ' +
+        'A ' + arcR + ' ' + arcR + ' 0 ' + large + ' 1 ' +
+        ex.toFixed(2) + ' ' + ey.toFixed(2) + ' Z');
+    }
+
+    function setHourPos(h) {
+      hourPos = ((h % 12) + 12) % 12;
+      setHand(hourHandle, hourHand, hourLen, hourPos);
+      updateArc();
+    }
+    function setMinPos(m) {
+      minPos = ((m % 12) + 12) % 12;
+      setHand(minHandle, minHand, minLen, minPos);
+      updateArc();
+    }
+
+    setHourPos(0);
+    setMinPos(0);
+
+    function svgPoint(clientX, clientY) {
+      const pt = svg.createSVGPoint();
+      pt.x = clientX; pt.y = clientY;
+      return pt.matrixTransform(svg.getScreenCTM().inverse());
+    }
+
+    function snap(degFrom12) {
+      let h = Math.round(degFrom12 / 30) % 12;
+      if (h < 0) h += 12;
+      return h;
+    }
+
+    let drag = null;
+    function startDrag(which) {
+      return function (e) {
+        drag = which;
+        e.preventDefault();
+      };
+    }
+    hourHandle.addEventListener('mousedown', startDrag('hour'));
+    hourHandle.addEventListener('touchstart', startDrag('hour'), { passive: false });
+    minHandle.addEventListener('mousedown', startDrag('min'));
+    minHandle.addEventListener('touchstart', startDrag('min'), { passive: false });
+
+    function clientFromEvt(e) {
+      if (e.touches && e.touches.length) {
+        return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }
+      return { x: e.clientX, y: e.clientY };
+    }
+
+    function onMove(e) {
+      if (!drag) return;
+      e.preventDefault();
+      const c = clientFromEvt(e);
+      const p = svgPoint(c.x, c.y);
+      // angle from 12 (which is at top, -90° in screen math); going clockwise.
+      // atan2(x, -y): with y down, "up" is -y, so atan2(x, -y) measures the angle
+      // CW from straight up.
+      let a = Math.atan2(p.x, -p.y) * 180 / Math.PI;
+      if (a < 0) a += 360;
+      const h = snap(a);
+      if (drag === 'hour') setHourPos(h);
+      else setMinPos(h);
+    }
+    function endDrag() { drag = null; }
+
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('mouseup', endDrag);
+    window.addEventListener('touchend', endDrag);
+  })();
+
+  // ---------------- Exercise checker ----------------
+  document.querySelectorAll('.exercise input').forEach(function (inp) {
+    inp.addEventListener('input', function () {
+      const want = parseInt(inp.dataset.answer, 10);
+      const raw = inp.value.trim();
+      // find the feedback span in the same <p>
+      const fb = inp.parentElement.querySelector('.feedback');
+      if (!fb) return;
+      if (raw === '') {
+        fb.textContent = '';
+        fb.className = 'feedback';
+        return;
+      }
+      const got = parseInt(raw, 10);
+      if (isNaN(got)) {
+        fb.textContent = '';
+        fb.className = 'feedback';
+        return;
+      }
+      if (got === want) {
+        fb.textContent = '\u2713 yes';
+        fb.className = 'feedback ok';
+      } else {
+        fb.textContent = 'not yet \u2014 try again';
+        fb.className = 'feedback no';
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
