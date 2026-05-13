@@ -41,20 +41,34 @@
   }
   li {
     margin: 0.85em 0;
-    padding: 0.7em 0.9em;
+  }
+  a.card {
+    display: block;
+    padding: 0.8em 1em;
     background: #faf6ec;
     border: 1px solid #e6dec5;
     border-radius: 6px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.12s ease, border-color 0.12s ease, transform 0.08s ease;
   }
-  li a.title {
+  a.card:hover {
+    background: #f4ecd6;
+    border-color: #d5c79c;
+  }
+  a.card:active {
+    transform: translateY(1px);
+  }
+  .title {
     font-weight: bold;
     color: #5a4a30;
-    text-decoration: none;
     font-size: 1.05em;
   }
-  li a.title:hover { text-decoration: underline; }
+  a.card:hover .title {
+    text-decoration: underline;
+  }
   .desc {
-    margin: 0.25em 0 0;
+    margin: 0.3em 0 0;
     font-size: 0.95em;
     color: #555;
   }
@@ -68,6 +82,7 @@
     border-radius: 3px;
     color: #6a5a30;
     vertical-align: middle;
+    font-weight: normal;
   }
   .tag.pdf { background: #e4d8c0; }
   .tag.live { background: #d6e4c8; color: #4a6030; }
@@ -88,46 +103,58 @@
 <h2>Interactive lessons</h2>
 <ul>
   <li>
-    <a class="title" href="angles_lesson.html">Angles and Turning</a>
-    <span class="tag live">interactive</span>
-    <p class="desc">Drag two arms and a pair of clock hands. From "what is an angle?" all the way to reading the dial. No telling, just doing.</p>
+    <a class="card" href="angles_lesson.html">
+      <span class="title">Angles and Turning</span>
+      <span class="tag live">interactive</span>
+      <p class="desc">Drag two arms and a pair of clock hands. From &ldquo;what is an angle?&rdquo; all the way to reading the dial. No telling, just doing.</p>
+    </a>
   </li>
 </ul>
 
 <h2>Saturday tests</h2>
 <ul>
   <li>
-    <a class="title" href="math_logic_test_03.pdf">Saturday Test No. 3</a>
-    <span class="tag pdf">PDF</span>
-    <p class="desc">Eight problems, fifteen minutes. Numbers and Shapes &middot; Counting Carefully &middot; Reasoning.</p>
+    <a class="card" href="math_logic_test_03.pdf">
+      <span class="title">Saturday Test No. 3</span>
+      <span class="tag pdf">PDF</span>
+      <p class="desc">Eight problems, fifteen minutes. Numbers and Shapes &middot; Counting Carefully &middot; Reasoning.</p>
+    </a>
   </li>
   <li>
-    <a class="title" href="math_logic_test_04.pdf">Saturday Test No. 4</a>
-    <span class="tag pdf">PDF</span>
-    <p class="desc">Eight problems, fifteen minutes. Variables, clock angles, lattice paths, Venn, knights &amp; knaves, water jugs.</p>
+    <a class="card" href="math_logic_test_04.pdf">
+      <span class="title">Saturday Test No. 4</span>
+      <span class="tag pdf">PDF</span>
+      <p class="desc">Eight problems, fifteen minutes. Variables, clock angles, lattice paths, Venn, knights &amp; knaves, water jugs.</p>
+    </a>
   </li>
 </ul>
 
 <h2>Practice sets</h2>
 <ul>
   <li>
-    <a class="title" href="practice_set_01.pdf">Practice Set No. 1 &mdash; Coins and Weighings</a>
-    <span class="tag pdf">PDF</span>
-    <p class="desc">Six untimed problems, scaffolded from three outcomes up to nine coins in two weighings.</p>
+    <a class="card" href="practice_set_01.pdf">
+      <span class="title">Practice Set No. 1 &mdash; Coins and Weighings</span>
+      <span class="tag pdf">PDF</span>
+      <p class="desc">Six untimed problems, scaffolded from three outcomes up to nine coins in two weighings.</p>
+    </a>
   </li>
   <li>
-    <a class="title" href="practice_set_02.pdf">Practice Set No. 2 &mdash; Counting with Overlaps</a>
-    <span class="tag pdf">PDF</span>
-    <p class="desc">Six untimed problems building the inclusion&ndash;exclusion idea: see the double-count, then subtract it.</p>
+    <a class="card" href="practice_set_02.pdf">
+      <span class="title">Practice Set No. 2 &mdash; Counting with Overlaps</span>
+      <span class="tag pdf">PDF</span>
+      <p class="desc">Six untimed problems building the inclusion&ndash;exclusion idea: see the double-count, then subtract it.</p>
+    </a>
   </li>
 </ul>
 
 <h2>Tools and paper</h2>
 <ul>
   <li>
-    <a class="title" href="grid_paper.pdf">Quarter-inch grid paper</a>
-    <span class="tag pdf">PDF</span>
-    <p class="desc">One page of light grid for working out problems by hand.</p>
+    <a class="card" href="grid_paper.pdf">
+      <span class="title">Quarter-inch grid paper</span>
+      <span class="tag pdf">PDF</span>
+      <p class="desc">One page of light grid for working out problems by hand.</p>
+    </a>
   </li>
 </ul>
 
