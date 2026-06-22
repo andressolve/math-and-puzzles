@@ -5,7 +5,7 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.lib.colors import HexColor
 
-OUTPUT = "/Users/andresrodriguez/Documents/payday_tests/grid_paper.pdf"
+OUTPUT = "/Users/andresrodriguez/Documents/payday_tests/supplements/grid_paper.pdf"
 
 page_w, page_h = letter
 margin = 0.5 * inch

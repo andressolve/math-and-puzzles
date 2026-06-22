@@ -1,8 +1,11 @@
 # Local-only playbook with personal notes
 SKILL.md
 
-# Render artifacts from PDF visual checks
-_render_*/
+# Local-only session journal (narrative evolution log, personal notes)
+JOURNAL.md
+
+# Render artifacts from PDF visual checks (loose PNGs or dirs)
+_render_*
 
 # Python
 __pycache__/

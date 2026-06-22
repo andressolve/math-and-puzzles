@@ -9,7 +9,7 @@ from reportlab.lib.units import inch
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.enums import TA_LEFT, TA_CENTER
 
-OUTPUT = "/Users/andresrodriguez/Documents/payday_tests/practice_set_02.pdf"
+OUTPUT = "/Users/andresrodriguez/Documents/payday_tests/practice_sets/practice_set_02.pdf"
 
 # --- Page geometry ---
 page_w, page_h = letter

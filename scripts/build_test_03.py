@@ -13,7 +13,7 @@ from reportlab.lib.enums import TA_LEFT, TA_CENTER
 from reportlab.graphics.shapes import Drawing, Line, Polygon, Rect, String, Circle, Path
 from reportlab.platypus.flowables import Flowable
 
-OUTPUT = "/Users/andresrodriguez/Documents/payday_tests/math_logic_test_03.pdf"
+OUTPUT = "/Users/andresrodriguez/Documents/payday_tests/tests/math_logic_test_03.pdf"
 
 # Page geometry
 page_w, page_h = letter

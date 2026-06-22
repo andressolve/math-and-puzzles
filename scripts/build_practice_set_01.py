@@ -16,7 +16,7 @@ from reportlab.lib.colors import black, HexColor
 from reportlab.lib.enums import TA_LEFT, TA_CENTER
 from reportlab.graphics.shapes import Drawing, Line, Polygon, Circle
 
-OUTPUT = "/Users/andresrodriguez/Documents/payday_tests/practice_set_01.pdf"
+OUTPUT = "/Users/andresrodriguez/Documents/payday_tests/practice_sets/practice_set_01.pdf"
 
 # Page geometry (letter)
 page_w, page_h = letter
